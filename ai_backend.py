@@ -44,13 +44,16 @@ class MockArk:
                             self.content = "当前环境无法连接到AI服务。这是一个示例回答，展示了AI产品经理学习助手的基本功能。\n\n请在本地环境安装volcenginesdkarkruntime包以获取完整的AI回答能力。"
                 
                 def __init__(self):
-                    self.message = MockArk.Chat.MockResponse.Choices.Message()
+                    # 直接引用内部定义的Message类
+                    self.message = MockResponse.Choices.Message()
                 
-            class MockChoices:
-                def __init__(self):
-                    self.choices = [MockArk.Chat.MockResponse.Choices()]
+                @property
+                def choices(self):
+                    return [self]
                 
-            return MockArk.Chat.MockResponse()
+            # 创建并返回MockResponse实例
+            response = MockResponse()
+            return response
     
     @property
     def chat(self):
