@@ -32,7 +32,7 @@ AI_PRODUCT_MANAGER_PROMPT = """你是一名非常资深的AI产品经理。我�
 class MockArk:
     def __init__(self, base_url=None, api_key=None):
         self.base_url = base_url
-        self.api_key = api_key
+        self.api_key = '4eaefbc4-f859-45ba-bec7-cfd8180ccf66'
         
     class Chat:  # 类名从ChatCompletions改为Chat
         def create(self, model, messages, max_tokens=3000, temperature=0.8):
